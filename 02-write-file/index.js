@@ -1,6 +1,3 @@
-// const readableStream = fs.createReadStream(textLocation, 'utf-8');
-// readableStream.on('data', (chunk) => console.log(chunk));
-
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
@@ -29,12 +26,3 @@ process.on('exit', () => {
   outputStream.close();
   rl.close();
 });
-
-// rl.question('enter any text', (line) => {
-//   if (line.toLowerCase() === 'exit') {
-//     rl.close();
-//     outputStream.close();
-//     console.log('Thank you for participating');
-//   }
-//   outputStream.write(line + '\n');
-// });
