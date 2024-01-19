@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-const outputStream = fs.createWriteStream(textLocation, { flags: 'a' });
+const outputStream = fs.createWriteStream(textLocation, { flags: 'w' });
 
 rl.setPrompt('enter text \n');
 
