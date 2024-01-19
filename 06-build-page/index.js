@@ -35,8 +35,7 @@ async function buildPage(placeForPage) {
     }
 
     await fs.writeFile(`${placeForPage}/index.html`, templateContent);
-
-    console.log('templateContent');
+    console.log('Success!');
   } catch (error) {
     console.error('Something goes wrong:', error.message);
   }
@@ -48,7 +47,6 @@ async function bundleCSS(cssSource, bundlePath) {
   try {
     const files = await fs.readdir(cssSource);
     const cssFiles = files.filter((file) => path.extname(file) === '.css');
-    console.log(cssFiles);
 
     const bundle = path.join(bundlePath, 'style.css');
     let bundleContent = '';
@@ -60,7 +58,6 @@ async function bundleCSS(cssSource, bundlePath) {
     }
 
     await fs.writeFile(bundle, bundleContent);
-    console.log('Success! All styles are in bundle.css now!');
   } catch (err) {
     console.error('Error:', err);
   }
@@ -89,8 +86,6 @@ async function copyDir(copyFrom, copyTo) {
         await fs.copyFile(copyFromPath, copyToPath);
       }
     }
-
-    console.log('Success!');
   } catch (error) {
     console.error('Something goes wrong:', error.message);
   }
