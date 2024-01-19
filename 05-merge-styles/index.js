@@ -17,6 +17,7 @@ async function bundleCSS(cssSource, bundlePath) {
     }
 
     await fs.writeFile(bundle, bundleContent);
+    console.log('Success! All styles are in bundle.css now!');
   } catch (err) {
     console.error('Error:', err);
   }
